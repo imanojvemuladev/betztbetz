@@ -725,7 +725,7 @@ Password : <password> <br/>
       <div class="secondary">
          <h3>Definition</h3>
          <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10</code>
-         <h3>Example Request</h3>
+         <h3>Example Request</h3> 
          <code>import requests
                url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
                payload = {}
