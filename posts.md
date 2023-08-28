@@ -132,8 +132,8 @@ Password : <password> <br/>
       <div class="primary">
          <h2>List Posts</h2>
          <p>Query this endpoint to retrieve a collection of posts. The response you receive can be controlled and filtered using the URL query parameters below.</p>
-         <h3>Definition</h3>
-         <code>GET /wp/v2/posts</code>
+<!--          <h3>Definition</h3>
+         <code>GET /wp/v2/posts</code> -->
          <h3>Example Request</h3>
          <code>$ curl https://example.com/wp-json/wp/v2/posts</code>
       </div>
