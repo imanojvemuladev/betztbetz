@@ -548,7 +548,6 @@
 																								</td>
 			</tr>
 			</table>
-
 	</div>
 </section>
 <section class="route">
@@ -716,13 +715,9 @@
 <section class="route">
 	<div class="primary">
 		<h2>Retrieve a Post</h2>
-
 		<h3>Definition & Example Request</h3>
-
 		<code>GET /wp/v2/posts/&lt;id&gt;</code>
-
 		<p>Query this endpoint to retrieve a specific post record.</p>
-
 		<code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;id&gt;</code>
 	</div>
 	<div class="secondary">
@@ -757,7 +752,6 @@
 																								</td>
 			</tr>
 			</table>
-
 	</div>
 </section>
 <section class="route">
@@ -922,15 +916,11 @@
 																								</td>
 			</tr>
 			</table>
-
 	</div>
 	<div class="secondary">
 		<h3>Definition</h3>
-
 		<code>POST /wp/v2/posts/&lt;id&gt;</code>
-
 		<h3>Example Request</h3>
-
 		<code>$ curl -X POST https://example.com/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
 </code>
 	</div>
@@ -957,15 +947,11 @@
 																								</td>
 			</tr>
 			</table>
-
 	</div>
 	<div class="secondary">
 		<h3>Definition</h3>
-
 		<code>DELETE /wp/v2/posts/&lt;id&gt;</code>
-
 		<h3>Example Request</h3>
-
 		<code>$ curl -X DELETE https://example.com/wp-json/wp/v2/posts/&lt;id&gt;</code>
 	</div>
 </section>
