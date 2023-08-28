@@ -724,10 +724,17 @@ Password : <password> <br/>
       </div>
       <div class="secondary">
          <h3>Definition</h3>
-         <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}</code>
-<!--          <h3>Example Request</h3>
-         <code>$ curl -X POST https://example.com/wp-json/wp/v2/posts/&lt;id&gt; -d '{"title":"My New Title"}'
-         </code> -->
+         <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10</code>
+         <h3>Example Request</h3>
+         <code>import requests
+               url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
+               payload = {}
+               headers = {
+                 'Authorization': 'Basic d2FwaTptWmJ1IFRoUEkgYmJwdiBSUjRMIEFzZnYgdjNBeQ=='
+               }
+               response = requests.request("DELETE", url, headers=headers, data=payload)
+               print(response.text)
+         </code>
       </div>
    </section>
    <section class="route">
