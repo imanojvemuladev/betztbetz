@@ -4,138 +4,22 @@ API : https://beztbetz.com/blog/wp-json/wp/v2/post
 Authorization : Basic Auth <br/>
 Username : <username> <br/>
 Password : <password> <br/>
-
----
----
 # Posts
-<section class="route">
-   <div class="primary">
-<!--       <h2>Schema</h2> -->
-<!--       <p>The schema defines all the fields that exist within a post record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p> -->
-      <table class="attributes">
-         <tr id="schema-id">
-            <td>
-               <code>id</code>
-            </td>
-            <td>
-               <p>Unique identifier for the post.</p>
-               <p class="type">
-                  JSON data type: integer				
-               </p>
-               <p class="read-only">Read only</p>
-               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-            </td>
-         </tr>
-         <tr id="schema-slug">
-            <td>
-               <code>slug</code>
-            </td>
-            <td>
-               <p>An alphanumeric identifier for the post unique to its type.</p>
-               <p class="type">
-                  JSON data type: string				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-            </td>
-         </tr>
-         <tr id="schema-status">
-            <td>
-               <code>status</code>
-            </td>
-            <td>
-               <p>A named status for the post.</p>
-               <p class="type">
-                  JSON data type: string				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code></p>
-               <p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
-            </td>
-         </tr>
-         <tr id="schema-generated_slug">
-            <td>
-               <code>generated_slug</code>
-            </td>
-            <td>
-               <p>Slug automatically generated from the post title.</p>
-               <p class="type">
-                  JSON data type: string				
-               </p>
-               <p class="read-only">Read only</p>
-               <p class="context">Context: <code>edit</code></p>
-            </td>
-         </tr>
-         <tr id="schema-title">
-            <td>
-               <code>title</code>
-            </td>
-            <td>
-               <p>The title for the post.</p>
-               <p class="type">
-                  JSON data type: object				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-            </td>
-         </tr>
-         <tr id="schema-content">
-            <td>
-               <code>content</code>
-            </td>
-            <td>
-               <p>The content for the post.</p>
-               <p class="type">
-                  JSON data type: object				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code></p>
-            </td>
-         </tr>
-         <tr id="schema-featured_media">
-            <td>
-               <code>featured_media</code>
-            </td>
-            <td>
-               <p>The ID of the featured media for the post.</p>
-               <p class="type">
-                  JSON data type: integer				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
-            </td>
-         </tr>
-         <tr id="schema-categories">
-            <td>
-               <code>categories</code>
-            </td>
-            <td>
-               <p>The terms assigned to the post in the category taxonomy.</p>
-               <p class="type">
-                  JSON data type: array				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code></p>
-            </td>
-         </tr>
-         <tr id="schema-tags">
-            <td>
-               <code>tags</code>
-            </td>
-            <td>
-               <p>The terms assigned to the post in the post_tag taxonomy.</p>
-               <p class="type">
-                  JSON data type: array				
-               </p>
-               <p class="context">Context: <code>view</code>, <code>edit</code></p>
-            </td>
-         </tr>
-      </table>
-   </div>
-</section>
+
 <div>
    <section class="route">
       <div class="primary">
          <h2>List Posts</h2>
          <p>Query this endpoint to retrieve a collection of posts. The response you receive can be controlled and filtered using the URL query parameters below.</p>
-<!--          <h3>Definition</h3>
-         <code>GET /wp/v2/posts</code> -->
+         <h3>Definition</h3>
+         <code>GET https://beztbetz.com/blog/wp-json/wp/v2/posts</code>
          <h3>Example Request</h3>
-         <code>https://beztbetz.com/blog/wp-json/wp/v2/posts</code>
+         <code>import requests
+url = "https://beztbetz.com/blog/wp-json/wp/v2/posts"
+payload = {}
+headers = {}
+response = requests.request("GET", url, headers=headers, data=payload)
+print(response.text)</code>
       </div>
       <div class="secondary">
          <h3>Arguments</h3>
@@ -360,6 +244,28 @@ Password : <password> <br/>
    <section class="route">
       <div class="primary">
          <h2>Create a Post</h2>
+       <h3>Definition</h3>
+         <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts</code> <br/><br/>
+        <b>Authorization ( Basic Auth ) </b><br/>
+         Username : <br/>
+         Password : <br/>
+         <h3>Example Request</h3>
+         <code>import requests
+import json
+url = "https://beztbetz.com/blog/wp-json/wp/v2/posts"
+payload = json.dumps({
+  "title": "Manoj Test Post",
+  "status": "publish",
+  "content": "Test Manoj Post Content....",
+  "featured_media": 265
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Basic YmV6dGJldHo6VThQZSBUWWQ0IHpsOVkgWk42ViBrdU9GIE9XQXI='
+}
+response = requests.request("POST", url, headers=headers, data=payload)
+print(response.text)
+</code>
          <h3>Arguments</h3>
          <table class="arguments">
             <tr>
@@ -512,18 +418,30 @@ Password : <password> <br/>
             </tr>
          </table>
       </div>
-      <div class="secondary">
+<!--       <div class="secondary">
          <h3>Definition</h3>
          <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts </code>
-      </div>
+      </div> -->
    </section>
    <section class="route">
       <div class="primary">
          <h2>Retrieve a Post</h2>
-         <h3>Definition & Example Request</h3>
+         <h3>Definition</h3>
          <code>GET https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}} </code>
-         <p>Query this endpoint to retrieve a specific post record.</p>
-<!--          <code>$ curl https://example.com/wp-json/wp/v2/posts/&lt;id&gt;</code> -->
+         <p>Query this endpoint to retrieve a specific post record.</p> <br/><br/>
+         <b>Authorization ( Basic Auth ) </b><br/>
+         Username : <br/>
+         Password : <br/>
+         <h3>Example Request</h3>
+         <code>import requests
+url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
+payload = {}
+headers = {
+  'Authorization': 'Basic d2FwaTptWmJ1IFRoUEkgYmJwdiBSUjRMIEFzZnYgdjNBeQ=='
+}
+response = requests.request("GET", url, headers=headers, data=payload)
+print(response.text)
+</code>
       </div>
       <div class="secondary">
          <h3>Arguments</h3>
@@ -560,8 +478,23 @@ Password : <password> <br/>
       </div>
    </section>
    <section class="route">
-      <div class="primary">
-         <h2>Update a Post</h2>
+    <h2>Update a Post</h2>
+    <div class="primary">
+         <h3>Definition</h3>
+         <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10</code>
+         <h3>Example Request</h3> 
+         <code>import requests
+url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10"
+payload = {}
+files={}
+headers = {
+  'Authorization': 'Basic YmV6dGJldHo6VThQZSBUWWQ0IHpsOVkgWk42ViBrdU9GIE9XQXI='
+}
+response = requests.request("POST", url, headers=headers, data=payload, files=files)
+print(response.text)
+</code>
+      </div>
+      <div class="secondary">
          <h3>Arguments</h3>
          <table class="arguments">
             <tr>
@@ -722,24 +655,25 @@ Password : <password> <br/>
             </tr>
          </table>
       </div>
-      <div class="secondary">
-         <h3>Definition</h3>
-         <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10</code>
-         <h3>Example Request</h3> 
-         <code>import requests
-               url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
-               payload = {}
-               headers = {
-                 'Authorization': 'Basic d2FwaTptWmJ1IFRoUEkgYmJwdiBSUjRMIEFzZnYgdjNBeQ=='
-               }
-               response = requests.request("DELETE", url, headers=headers, data=payload)
-               print(response.text)
-         </code>
-      </div>
+      
    </section>
    <section class="route">
+    <h2>Delete a Post</h2>
+    <div class="secondary">
+         <h3>Definition</h3>
+         <code>DELETE https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}</code>
+         <h3>Example Request</h3>
+         <code>import requests
+url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
+payload = {}
+headers = {
+  'Authorization': 'Basic d2FwaTptWmJ1IFRoUEkgYmJwdiBSUjRMIEFzZnYgdjNBeQ=='
+}
+response = requests.request("DELETE", url, headers=headers, data=payload)
+print(response.text)
+</code>
+      </div>
       <div class="primary">
-         <h2>Delete a Post</h2>
          <h3>Arguments</h3>
          <table class="arguments">
             <tr>
@@ -760,11 +694,127 @@ Password : <password> <br/>
             </tr>
          </table>
       </div>
-      <div class="secondary">
-         <h3>Definition</h3>
-         <code>DELETE https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}</code>
-<!--          <h3>Example Request</h3>
-         <code>$ curl -X DELETE https://example.com/wp-json/wp/v2/posts/&lt;id&gt;</code> -->
-      </div>
+      
    </section>
+
+ <section class="route">
+   <div class="primary">
+      <h2>Schema</h2>
+      <p>The schema defines all the fields that exist within a post record. Any response from these endpoints can be expected to contain the fields below unless the `_filter` query parameter is used or the schema field only appears in a specific context.</p>
+      <table class="attributes">
+         <tr id="schema-id">
+            <td>
+               <code>id</code>
+            </td>
+            <td>
+               <p>Unique identifier for the post.</p>
+               <p class="type">
+                  JSON data type: integer				
+               </p>
+               <p class="read-only">Read only</p>
+               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+            </td>
+         </tr>
+         <tr id="schema-slug">
+            <td>
+               <code>slug</code>
+            </td>
+            <td>
+               <p>An alphanumeric identifier for the post unique to its type.</p>
+               <p class="type">
+                  JSON data type: string				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+            </td>
+         </tr>
+         <tr id="schema-status">
+            <td>
+               <code>status</code>
+            </td>
+            <td>
+               <p>A named status for the post.</p>
+               <p class="type">
+                  JSON data type: string				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code></p>
+               <p>One of: <code>publish</code>, <code>future</code>, <code>draft</code>, <code>pending</code>, <code>private</code></p>
+            </td>
+         </tr>
+         <tr id="schema-generated_slug">
+            <td>
+               <code>generated_slug</code>
+            </td>
+            <td>
+               <p>Slug automatically generated from the post title.</p>
+               <p class="type">
+                  JSON data type: string				
+               </p>
+               <p class="read-only">Read only</p>
+               <p class="context">Context: <code>edit</code></p>
+            </td>
+         </tr>
+         <tr id="schema-title">
+            <td>
+               <code>title</code>
+            </td>
+            <td>
+               <p>The title for the post.</p>
+               <p class="type">
+                  JSON data type: object				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+            </td>
+         </tr>
+         <tr id="schema-content">
+            <td>
+               <code>content</code>
+            </td>
+            <td>
+               <p>The content for the post.</p>
+               <p class="type">
+                  JSON data type: object				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code></p>
+            </td>
+         </tr>
+         <tr id="schema-featured_media">
+            <td>
+               <code>featured_media</code>
+            </td>
+            <td>
+               <p>The ID of the featured media for the post.</p>
+               <p class="type">
+                  JSON data type: integer				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code>, <code>embed</code></p>
+            </td>
+         </tr>
+         <tr id="schema-categories">
+            <td>
+               <code>categories</code>
+            </td>
+            <td>
+               <p>The terms assigned to the post in the category taxonomy.</p>
+               <p class="type">
+                  JSON data type: array				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code></p>
+            </td>
+         </tr>
+         <tr id="schema-tags">
+            <td>
+               <code>tags</code>
+            </td>
+            <td>
+               <p>The terms assigned to the post in the post_tag taxonomy.</p>
+               <p class="type">
+                  JSON data type: array				
+               </p>
+               <p class="context">Context: <code>view</code>, <code>edit</code></p>
+            </td>
+         </tr>
+      </table>
+   </div>
+</section>
+
 </div>
