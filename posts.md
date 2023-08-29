@@ -5,6 +5,41 @@ Authorization : Basic Auth <br/>
 Username : <username> <br/>
 Password : <password> <br/>
 # Posts
+<section>
+    <h2>List Of Categories</h2>
+    <div class="secondary">
+        <table class="arguments">
+        <tr>
+         <td><code>id</code><br /></td>
+         <td><p>Unique identifier for the categorie.</p></td>
+        </tr>
+        <tr>
+         <td>1<br /></td>
+         <td><p>Uncategorized</p></td>
+        </tr>
+        <tr>
+         <td><code>2</code><br /></td>
+         <td><p>Betting News</p></td>
+        </tr>
+        <tr>
+         <td>3<br /></td>
+         <td><p>Betting Tips</p></td>
+        </tr>
+        <tr>
+         <td>4<br /></td>
+         <td><p>Bookmakers News</p></td>
+        </tr>
+        <tr>
+         <td>5<br /></td>
+         <td><p>Boxing News</p></td>
+        </tr>
+        <tr>
+         <td>6<br /></td>
+         <td><p>Football News</p></td>
+        </tr>
+        </table>
+    </div>
+</section>
 
 <div>
    <section class="route">
