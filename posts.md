@@ -10,8 +10,8 @@ Password : <password> <br/>
     <div class="secondary">
         <table class="arguments">
         <tr>
-         <td><code>id</code><br /></td>
-         <td><p>Unique identifier for the categorie.</p></td>
+         <td><code>ID</code><br /></td>
+         <td><p>Unique identifier for the Categories.</p></td>
         </tr>
         <tr>
          <td>1<br /></td>
@@ -37,6 +37,42 @@ Password : <password> <br/>
          <td>6<br /></td>
          <td><p>Football News</p></td>
         </tr>
+        </table>
+    </div>
+</section>
+
+<section>
+    <h2>List Of Tags</h2>
+    <div class="secondary">
+        <table class="arguments">
+        <tr>
+         <td><code>ID</code><br /></td>
+         <td><p>Unique identifier for the Tags.</p></td>
+        </tr>
+        <tr>
+         <td>7<br /></td>
+         <td><p>Betting</p></td>
+        </tr>
+        <tr>
+         <td><code>8</code><br /></td>
+         <td><p>Gambling</p></td>
+        </tr>
+        <tr>
+         <td>9<br /></td>
+         <td><p>Game</p></td>
+        </tr>
+        <tr>
+         <td>10<br /></td>
+         <td><p>Prediction</p></td>
+        </tr>
+        <tr>
+         <td>11<br /></td>
+         <td><p>Sport</p></td>
+        </tr>
+<!--         <tr>
+         <td>6<br /></td>
+         <td><p>Football News</p></td>
+        </tr> -->
         </table>
     </div>
 </section>
