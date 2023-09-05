@@ -320,6 +320,8 @@ print(response.text)</code>
         <b>Authorization ( Basic Auth ) </b><br/>
          Username : <br/>
          Password : <br/>
+         <h2>Required Arguments : title, content, featured_media, categories, tags (optional)</h2>
+         <p>In order Create Post, first <b>Create Media</b> it'll rerutn <b>ID</b> add it to <b>featured_media</b> </p>
          <h3>Example Request</h3>
          <code>import requests
 import json
@@ -503,6 +505,7 @@ print(response.text)
          <b>Authorization ( Basic Auth ) </b><br/>
          Username : <br/>
          Password : <br/>
+         <h2>Required Arguments : title, content, featured_media, categories, tags (optional)</h2>
          <h3>Example Request</h3>
          <code>import requests
 url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
@@ -553,6 +556,7 @@ print(response.text)
     <div class="primary">
          <h3>Definition</h3>
          <code>POST https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10</code>
+         <h2>Required Arguments : title, content, featured_media, categories, tags (optional)</h2>
          <h3>Example Request</h3> 
          <code>import requests
 url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/267?categories=5,3&tags=7,8,10"
@@ -733,6 +737,7 @@ print(response.text)
     <div class="secondary">
          <h3>Definition</h3>
          <code>DELETE https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}</code>
+         <h2>Required Arguments : id (Post ID)</h2>
          <h3>Example Request</h3>
          <code>import requests
 url = "https://beztbetz.com/blog/wp-json/wp/v2/posts/{{postId}}"
